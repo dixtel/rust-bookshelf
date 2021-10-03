@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package bookshelf_service;
+
+service BookshelfService {
+    // Book
+    rpc AddBook(AddBookRequest) returns (AddBookResponse);
+    rpc RemoveBook(RemoveBookRequest) returns (RemoveBookResponse);
+    rpc UpdateBook(UpdateBookRequest) returns (UpdateBookResponse);
+    rpc ListBooks(ListBooksRequest) returns (ListBooksResponse);
+
+    // Author
+    rpc AddAuthor(AddAuthorRequest) returns (AddAuthorResponse);
+    rpc RemoveAuthor(RemoveAuthorRequest) returns (RemoveAuthorResponse);
+    rpc UpdateAuthor(UpdateAuthorRequest) returns (UpdateAuthorResponse);
+    rpc ListAuthors(ListAuthorsRequest) returns (ListAuthorsResponse);
+
+}
+
+message AddBookRequest {
+    string title = 1;
+    string author_id = 2; 
+}
+
+message AddBookResponse {
+    string id = 1;
+    string title = 2;
+    string author_id = 3;
+}
+
+message RemoveBookRequest {
+    string id = 1;
+}
+
+message RemoveBookResponse {
+    string id = 1;
+}
+
+message UpdateBookRequest {
+    string id = 1;
+    string title = 2;
+    string author_id = 3;
+}
+
+message UpdateBookResponse {
+    string id = 1;
+    string title = 2;
+    string author_id = 3;
+}
+
+message ListBooksRequest {}
+
+message ListBooksResponse {
+    message Book {
+        string id = 1;
+        string title = 2;
+        string author_id = 3;
+    }
+    repeated Book books = 1;
+}
+
+message AddAuthorRequest {
+    string first_name = 1;
+    string second_name = 2;
+}
+
+message AddAuthorResponse {
+    string id = 1;
+    string first_name = 2;
+    string second_name = 3;
+}
+
+message RemoveAuthorRequest {
+    string id = 1;
+
+}
+
+message RemoveAuthorResponse {
+    string id = 1;
+}
+
+message UpdateAuthorRequest {
+    string id = 1;
+    string first_name = 2;
+    string second_name = 3;
+}
+
+message UpdateAuthorResponse {
+    string id = 1;
+    string first_name = 2;
+    string second_name = 3;
+}
+
+message ListAuthorsRequest {}
+
+message ListAuthorsResponse {
+    message Author {
+        string id = 1;
+        string first_name = 2;
+        string second_name = 3;
+    }
+    repeated Author authors = 1;
+}
