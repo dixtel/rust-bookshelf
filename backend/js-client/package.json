@@ -1,0 +1,15 @@
+{
+  "name": "bookshelf-js-client",
+  "version": "1.0.5",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dixtel",
+  "license": "ISC",
+  "dependencies": {
+    "google-protobuf": "^3.18.1",
+    "grpc-web": "^1.2.1"
+  }
+}
